@@ -1,14 +1,23 @@
-import logo from './logo.svg';
 // import './App.css';
+import logo from './logo.svg';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import React from 'react';
 import Home from './pages/Home/index.jsx';
+import AdminPanel from './pages/AdminPanel/index.jsx';
+// import NoPage from './pages/NoPage/index.jsx';
+import Layout from './pages/Layout/index.jsx';
 
 function App() {
-  const state = React.useState([]); // useState is a function that returns an array with two elements and the first element is the value of the state and the second element is a function that can be used to update the state.
-  const value = state[0]; // value is the value of the state.
   return (
     <div className="App">
-      <Home />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/admin" element={<Layout />} >
+            <Route index element={<Home />} />
+            <Route path=":panel" element={<AdminPanel />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }

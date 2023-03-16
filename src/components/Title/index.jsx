@@ -1,9 +1,9 @@
 import React, {useEffect, useState} from 'react';
 import './Title.module.css';
 
-export default function Title() {
+export default function Title({title}) {
 
-    const [title, setTitle] = useState(['Home', 'About', 'Contact' ]);
+    // const [title, setTitle] = useState(['Home']);
 
     return (
         <div className='title'>
