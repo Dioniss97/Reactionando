@@ -1,18 +1,71 @@
-nav {
-    /* 
-        Un nav fuera de la pantalla, que desciende al estar en active. 
-    */
+/* 
+
+import { Link } from 'react-router-dom'
+import React, { useContext } from 'react'
+import MenuContext from '../../contexts/MenuContext'
+import styles from './Menu.module.css'
+
+export default function Menu () {
+  const { open, setOpen } = useContext(MenuContext)
+  const menuClass = open ? `${styles.menu} ${styles.active}` : `${styles.menu}`
+
+  return (
+    <div className={menuClass}>
+      <nav>
+        <ul>
+          <li><Link to='/admin' onClick={() => setOpen(!open)}>Inicio</Link></li>
+          <li><Link to='/admin/usuarios' onClick={() => setOpen(!open)}>Usuarios</Link></li>
+          <li><Link to='/admin/clientes' onClick={() => setOpen(!open)}>Clientes</Link></li>
+          <li><Link to='/admin/emails' onClick={() => setOpen(!open)}>Emails</Link></li>
+        </ul>
+      </nav>
+    </div>
+  )
+} 
+
+Now we are going to do the css for this component:
+
+*/
+
+.menu {
     position: fixed;
-    top: -100%;
+    top: 0;
     left: 0;
+    z-index: 1;
     width: 100%;
     height: 100%;
-    background-color: #000;
-    z-index: 2;
-    transition: all 0.3s ease;
+    background-color: #fff;
+    transform: translateX(-100%);
+    transition: all 0.3s ease-in-out;
 }
 
-nav > ul {
+.menu.active {
+    transform: translateX(0);
+}
+
+.menu nav {
     display: flex;
-    justify-content: space-evenly;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.menu nav ul {
+    list-style: none;
+}
+
+.menu nav ul li {
+    margin: 1rem 0;
+}
+
+.menu nav ul li a {
+    font-size: 2rem;
+    text-decoration: none;
+    color: #000;
+    transition: all 0.3s ease-in-out;
+}
+
+.menu nav ul li a:hover {
+    color: #ff0000;
 }

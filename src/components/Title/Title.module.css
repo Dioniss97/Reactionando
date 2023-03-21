@@ -1,0 +1,40 @@
+/* 
+
+    import React, {useEffect, useState} from 'react';
+    import './Title.module.css';
+
+    export default function Title({title}) {
+
+        // const [title, setTitle] = useState(['Home']);
+
+        return (
+            <div className='title'>
+                <h1>{title}</h1>
+            </div>
+        )
+    }
+
+
+    Con este color #10a37f de base hacemos el css:
+
+*/
+
+.title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #353535;
+    height: 10vh;
+    box-shadow: 0 0 10px #10a37f;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.title h1 {
+    color: #10a37f;
+    font-size: 2rem;
+    font-weight: 400;
+    text-transform: uppercase;
+}

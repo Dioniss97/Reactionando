@@ -1,21 +1,16 @@
-import React, {useEffect, useRef, useContext} from 'react';
-import styles from './Hamburger.module.css';
-import MenuContext from '../../contexts/MenuContext.jsx';
+import { useContext } from 'react'
+import MenuContext from '../../contexts/MenuContext'
+import styles from './Hamburger.module.css'
 
-export default function Hamburger() {
+export default function HamburgerButton () {
+  const { open, setOpen } = useContext(MenuContext)
+  const hamburgerClass = open ? `${styles.hamburgerButton} ${styles.active}` : `${styles.hamburgerButton}`
 
-    const [open, setOpen] = useContext(MenuContext);
-    const hamburgerRef = useRef(null);
-
-    useEffect(() => {
-        hamburgerRef.current.classList.toggle(styles.active, open);
-    }, [open]);
-
-    return (
-        <div ref={hamburgerRef} className={styles.hamburger} onClick={() => setOpen(!open)}>
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-    )
+  return (
+    <div className={hamburgerClass} onClick={() => setOpen(!open)}>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+  )
 }
