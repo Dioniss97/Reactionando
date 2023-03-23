@@ -2,10 +2,8 @@ header {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    background-color: #fff;
     height: 10vh;
     box-shadow: 0 0 10px #10a37f;
-    position: fixed;
     top: 0;
     left: 0;
     width: 100%;

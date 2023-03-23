@@ -1,0 +1,48 @@
+.PlusMinusContainer {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 10vh;
+    box-shadow: 0 0 10px #10a37f;
+    width: 100%;
+}
+
+.PlusMinusContainer > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.PlusMinusContainer > div:first-child {
+    background-color: #10a37f;
+    color: white;
+    font-size: 2rem;
+    border: none;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    cursor: pointer;
+}
+
+.PlusMinusContainer > div:nth-child(3) {
+    background-color: #10a37f;
+    color: white;
+    font-size: 2rem;
+    border: none;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    cursor: pointer;
+}
+
+.PlusMinusContainer > div > button {
+    background-color: transparent;
+    color: white;
+    font-size: 1.8rem;
+    border: none;
+    cursor: pointer;
+}
+
+.PlusMinusContainer > div > span {
+    font-size: 2rem;
+}
