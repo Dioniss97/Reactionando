@@ -43,6 +43,17 @@
     cursor: pointer;
 }
 
+.PlusMinusContainer > div:nth-child(3) > button {
+    position: relative;
+    top: 0.05rem;
+    right: 0.05rem;
+}
+
+.PlusMinusContainer > div:first-child > button {
+    position: relative;
+    bottom: 0.05rem;
+}
+
 .PlusMinusContainer > div > span {
     font-size: 2rem;
 }
