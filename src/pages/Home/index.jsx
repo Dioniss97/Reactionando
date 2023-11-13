@@ -1,16 +1,9 @@
-import PlusMinus from '../../components/PlusMinus'
-import Modal from '../../components/Modal'
-import { PlusMinusContext } from '../../contexts/PlusMinusContext'
-import Figures from '../../components/Figures'
+import SearchBar from '../../components/SearchBar'
 
 export default function Home() {
 return (
     <div>
-        <PlusMinusContext>
-            <PlusMinus />
-            <Modal />
-        </PlusMinusContext>
-        <Figures />
+        <SearchBar />
     </div>
     )
 }
